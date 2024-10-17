@@ -1,0 +1,13 @@
+{
+    "Attendancetab" : "Attendance",
+    "ToInvoiceTab" : "To Invoice",
+    "UnpaidLess30" : "Unpaid < 30",
+    "UnpaidMore30" : "Unpaid > 30",
+    "AttendanceItems" : "ClientTherapistSupervisorDateService NameAmount",
+    "InvoiceItems" : "ClientTherapistSupervisorDateService NameAmount ChargedInvoice",
+    "SessionsItems" : "ClientTherapistSupervisorDateService NameAmount",
+    "UnpayedLess30Items" : "Invoice #ClientTherapistSupervisorInvoice DateDeliveryReminderAmount ChargedAmount Paid",
+    "AutoPayItems" : "InvoiceClient & PayorTherapistInvoice DateEmailAmount ChargedStatus",
+    "UnpayedMore30DaysItems" : "Invoice #ClientTherapistSupervisorInvoice DateDeliveryReminderAmount ChargedAmount Paid",
+    "SummaryItems" : "BillingInsuranceDocumentsTasks"
+}

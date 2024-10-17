@@ -1,0 +1,9 @@
+{
+    "firstName": "Eva",
+    "lastName": "Smiths",
+    "address": "615 1 Ave SW",
+    "city": "Calgary",
+    "zip": "89798",
+    "toastMessage": "Added Client",
+    "deleteClientToast": "Successfully deleted client"
+}

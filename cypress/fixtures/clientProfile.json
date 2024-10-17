@@ -1,0 +1,29 @@
+{
+    "clientMenu":  "Sessions & NotesContact & ClinicalDocumentsFinancesInsuranceLogsMeasuresFormsSecure MessagingCreate InvoiceRecord PaymentClient SummaryClient ExportMessages ExportSend FormsSend MeasuresCreate SuperbillCreate Claim",
+    "contactClinical" : "Contact & Clinical",
+    "clinicalDetails" : "Clinical Details",
+    "contactDetails": "Contact Details",
+    "circleOfCare": "Circle of Care",
+    "accounDetails" : "Account Details",
+    "paymentMethod" : "Payment Method",
+    "medications" : "Medications",
+    "contactDetailsLabel" : "Contact Details",
+    "toastSavedClientContact" : "Saved client contact settings",
+    "toastSavedClientClinical" : "Saved client clinical settings",
+    "circleOfCareAddContact" : "Add Contact",
+    "circleOfCareAddLinkedAcct" : "Add Linked Account",
+    "circleOfCareName": "Alex",
+    "circleOfCareLastName": "Bilyk",
+    "circleOfCareRelationship": "Child",
+    "circleOfCareAddress": "1334 13 Ave SW",
+    "circleOfCareCity": "Seattle",
+    "circleOfCareZip": "89141",
+    "circleOfCareState": "Alaska",
+    "saveCircleOfCareToast": "Saved alternate contact",
+    "removeCircleOfCareToast": "Removed alternate contact",
+    "accountDetails": "Account Details"
+    
+
+
+
+}

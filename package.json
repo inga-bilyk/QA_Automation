@@ -1,0 +1,20 @@
+{
+  "name": "cypressautomationowlpractice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run", 
+    "headTest": "npx cypress run --headed",
+    "recordDashboard": "npx cypress run --record --key 60ccd0d2-2a3c-4101-8bbb-b547fdd35ff6 --spec cypress/integration/smoke",
+    "chromeTest": "npx run test --browser chrome",
+    "smokeRun": "npx cypress run --spec cypress/integration/smoke"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^13.13.1",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}
