@@ -9,7 +9,7 @@ describe('User can sign up for a clinic', function(){
 
     it('Create a new acct', function(){
 
-        cy.visit('https://qa-marketing.owlpractice-dev.com/signup/')
+        cy.visit('https://qa-marketing.owlpractice-dev.ca/signup/')
 
         cy.get('.elementor-widget-container > iframe').then($iframe => {
             const firstIframeBody = $iframe[0].contentDocument.body;

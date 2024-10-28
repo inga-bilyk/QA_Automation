@@ -6,8 +6,9 @@ module.exports = defineConfig({
   
   projectId: "75gyzc",
   reporter: 'cypress-mochawesome-reporter',
+  
   env: {
-    canLoginUrl:  "https://ingatestpractice.owlpractice-dev.com/", //"https://bilyk.owlpractice.com/", 
+    canLoginUrl:  "https://automation.owlpractice-dev.com/calendar",//"https://ingatestpractice.owlpractice-dev.com/",
     usSignUpUrl: "https://owlpractice.com/signup/",
     
   },

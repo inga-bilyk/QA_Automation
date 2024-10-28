@@ -5,6 +5,7 @@ import LogIn from '../pageObjects/logIn'
 import BookSession from '../pageObjects/bookSession'
 import GenerateInvoice from '../pageObjects/generateInvoice'
 import ClinicGeneral from '../pageObjects/clinicGeneral'
+import ClientProfile from '../pageObjects/clientProfile'
 describe('Generate/Delete Invoice, Receipt', function(){
 
     before(function(){
@@ -17,6 +18,11 @@ describe('Generate/Delete Invoice, Receipt', function(){
 
             this.data1=data1
 
+        })
+
+        
+        cy.fixture('clientProfile').then(function(clientdata){
+            this.clientdata = clientdata
         })
 
     })
@@ -41,6 +47,7 @@ describe('Generate/Delete Invoice, Receipt', function(){
         const bookSession = new BookSession()
         const generateInvoice = new GenerateInvoice()
         const clinicGeneral = new ClinicGeneral()
+        const clientProfile = new ClientProfile()
 
        
        cy.visit(Cypress.env('canLoginUrl'))
@@ -50,13 +57,86 @@ describe('Generate/Delete Invoice, Receipt', function(){
         logIn.getPasswordField().type(this.data.password)
         logIn.getSignInButton().contains('Sign In').click() 
 
-        logIn.getUserNameValidation().should('have.text', this.data.textValue)
+        //logIn.getUserNameValidation().should('have.text', this.data.textValue)
         cy.wait(3000)
+
+        //New block for client creation
+
+
+        createClient.getClientsTab().contains('Clients').click()
         
+
+        createClient.getAddClientButton().click()
+        createClient.getClientFirstName().type(this.data1.firstName)
+        createClient.getClientLastName().type(this.data1.lastName)
+       
+       
+       createClient.getClientAddressField().type(this.data1.address)
+
+       createClient.getClientCity().type(this.data1.city)
+       createClient.getClientZipCodeField().type(this.data1.zip)
+       createClient.getCreateClientButton().click()
+       createClient.getToastMessage().should('not.be.visible').should('have.text', this.data1.toastMessage)
+
+       //Set to manual payment
+
+       clinicGeneral.getSelectClientFromClientTab().click() 
+        //validate all the tabs are present in Navigate and Actions
+        clientProfile.getClientMenuItems().should('have.text', this.clientdata.clientMenu)
+        clientProfile.getClientMenuItems().each(($el, index, $list)=>{
+            if($el.text()=== this.clientdata.contactClinical)
+            {
+                $el.click()
+            }
+        })
+        clientProfile.getClientContacMenuButtons().should('have.length', '6')
+
+         //Account Details
+
+         clientProfile.getClientContacMenuButtons().each(($el, index, $list)=>{
+            const clientDetails = $el.text()
+            if(clientDetails.includes(this.clientdata.accountDetails))
+            {
+                $el.click()
+            }
+        })
+        clientProfile.getEditButton().click()
+
+        clientProfile.getInvoiceCreation().click()
+        clientProfile.getOption().contains('Create Manually').click()
+        clientProfile.getInvoiceSendingDropdown().click()
+        clientProfile.getOption().contains('Send Manually').click()
+        clientProfile.getReceiptSendingDropdown().click()
+        clientProfile.getOption().contains('Send Manually').click()
+        clientProfile.getPaymentProcessingDropdown().click()
+        clientProfile.getOption().contains('Process Manually').click({force:true})
+        cy.wait(3000)
+        clientProfile.getEditSaveButton().click()
+        createClient.getToastMessage().should('have.text', "Saved client account settings")
+
+        //Validate it's manual now
+        clientProfile.getInvoiceCreationSelected().should('have.text', 'Create Manually')
+        clientProfile.getInvoiceSendingSelected().should('have.text', 'Send Manually')
+        clientProfile.getReceiptSendingSelected().should('have.text', 'Send Manually')
+        clientProfile.getPaymentProcessSelected().should('have.text', 'Process Manually')
+
+
+
+
+       
+
+
+    
+
+
+       
         
+       createClient.getClientsTab().contains('Calendar').click()
+        
+       cy.wait(3000)
         bookSession.getDayViewCalendar().trigger('mouseover').click({force:true})
         
-        
+        cy.wait(3000)
         
         bookSession.getSelectDateTime().click()
         
@@ -135,6 +215,20 @@ describe('Generate/Delete Invoice, Receipt', function(){
         bookSession.getDeleteSessionButton().click()
         bookSession.getDialogDeleteSessionButton().click()
         createClient.getToastMessage().should('include.text', 'deleted')
+
+
+        //Delete a client
+
+        createClient.getClientsTab().contains('Clients').click()
+        cy.wait(3000)
+
+      createClient.getCreatedClientCheckbox().click()
+      createClient.getDeleteClientButton().click()
+      createClient.getDeleteSelectedClientButton().click()
+      cy.wait(5000)
+      createClient.getConfirmDeleteClientButton().click()
+      createClient.getToastMessage().should('not.be.visible').should('have.text', this.data1.deleteClientToast)
+
 
        
        

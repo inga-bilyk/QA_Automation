@@ -2,11 +2,13 @@ class BookSession{
 
     getDayViewCalendar()
     {
-        return cy.get('.Toolbar__CalendarToolbarWrapper-sc-1jryfir-0.jesMwL button:nth-child(1)').contains('Day')
+        
+        return cy.get('button[class*="undefined Button__ButtonBase"]').contains('Day')
+        
     }
     getSelectDateTime()
     {
-        return cy.get('tr[data-time="10:30:00"]')
+        return cy.get('tr[data-time="11:30:00"]')
     }
     getClientNameField()
     {
@@ -26,7 +28,7 @@ class BookSession{
     }
     getCreateSessionButton()
     {
-        return cy.get('.kpgNZq')
+        return cy.get('button[type="button"]').contains('Create Session')
     }
     getBookedSessionClick()
     {
@@ -34,14 +36,17 @@ class BookSession{
     }
     getMoreButton()
     {
-        return cy.get('.SessionOverview__MoreInfoRow-sc-1x1t2dh-2.jxqubN button')
+        
+        return cy.get('button[class*="SessionOverview__MoreInfoButton"]').contains('More Info')
+        
     }
     getAmountChargedField()
     {
-        //return cy.get('.FormField__InputRow-sc-s9tc33-1 > .common__Input-sc-1hb9rs-23')
-      //  return cy.get('.common__Input-sc-1hb9rs-23.fqKqHY').eq(2)
-      return cy.get('.FormField__StyledDisabledInput-sc-s9tc33-2 > .common__Input-sc-1hb9rs-23')
-      //cy.get('.common__Input-sc-1hb9rs-23.fIkdpa').eq(2)
+       
+      
+      return cy.get('input[class*="common__Input"]').eq(2)
+      
+      
     }
     getDurationField()
     {
@@ -49,7 +54,9 @@ class BookSession{
     }
     getUpdateSessionButton()
     {
-        return cy.get('.Modal__Actions-sc-m5rli6-2.kqmGrI').contains('Save Session')
+        
+        return cy.get('button[type="button"]').contains('Save Session')
+       
     }
     getUpdateDialogConfirmButton()
     {
@@ -57,11 +64,13 @@ class BookSession{
     }
     getDeleteSessionButton()
     {
-        return cy.get('.Modal__Actions-sc-m5rli6-2.kqmGrI').contains('Delete')
+        
+        return cy.get('button[type="button"]').contains('Delete')
     }
     getDialogDeleteSessionButton()
     {
-        return cy.get('.highest-z-index > .bp3-overlay > .bp3-dialog-container > .bp3-dialog > .Modal__Actions-sc-m5rli6-2').contains('Delete Session')
+        return cy.get('button[type="button"]').contains('Delete Session')
+        
     }
 
 }

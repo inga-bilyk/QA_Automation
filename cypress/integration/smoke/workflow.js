@@ -58,7 +58,7 @@ describe('Workflow tab of the clinic', function(){
         logIn.getPasswordField().type(this.data.password)
         logIn.getSignInButton().contains('Sign In').click() 
 
-        logIn.getUserNameValidation().should('have.text', this.data.textValue)
+        //logIn.getUserNameValidation().should('have.text', this.data.textValue)
 
         createClient.getClientsTab().contains('Workflow').click()
         

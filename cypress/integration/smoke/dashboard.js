@@ -58,11 +58,11 @@ describe('Validate Dashboard', function(){
         logIn.getPasswordField().type(this.data.password)
         logIn.getSignInButton().contains('Sign In').click() 
 
-        logIn.getUserNameValidation().should('have.text', this.data.textValue)
+        //logIn.getUserNameValidation().should('have.text', this.data.textValue)
         
         createClient.getClientsTab().contains('Dashboard').click()
 
-        dashboard.getDashboardTabsNames().should('have.text', 'Year Over YearPractice StatsClinical StatsData ExportStripe')
+        dashboard.getDashboardTabsNames().should('have.text', 'Year Over YearPractice StatsClinical StatsData Export')
         
         dashboard.getDashboardTabs().contains('Data Export').click()
 

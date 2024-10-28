@@ -6,19 +6,20 @@ class ClientProfile
     }
     getClientContacMenuButtons()
     {
-        return cy.get('.TabView__TabBar-sc-1doprxs-1.hugMcT button')
+        return cy.get('div[class*="TabView__TabBar"] button')
+        
+        
     }
     getEditButton()
     {
-        return cy.get('.ContactClinical__TabContentActions-sc-n5t4b1-2.dcWuki button')
+        
+        return cy.get('button[type="button"]').contains('Edit')
     }
-    getContactDetailsEditModuleLable()
-    {
-        return cy.get('#title-bp-dialog-124')
-    }
+    
     getEditSaveButton()
     {
-        return cy.get('.Modal__Actions-sc-m5rli6-2.kqmGrI button').contains('Save')
+        return cy.get('button[type="button"]').contains('Save')
+       
     }
     getClinicalDetailsWaitlistCommentsField()
     {
@@ -26,7 +27,8 @@ class ClientProfile
     }
     getCircleOfCareButtons()
     {
-        return cy.get('.ContactClinical__TabContentActions-sc-n5t4b1-2.dcWuki button')
+        return cy.get('button[type="button"]')
+      
     }
     getContactDetailsFirstName()
     {
@@ -70,11 +72,13 @@ class ClientProfile
     }
     getDeleteCircleOfCare()
     {
-        return cy.get('.Header__ActionsWrapper-sc-xfcimv-3.eBwHf button').contains('Delete')
+        return cy.get('button[type="button"]').contains('Delete')
+        
     }
     getConfirmDeleteCircleOfCare()
     {
-        return cy.get('.Modal__Actions-sc-m5rli6-2.kqmGrI button').contains('Delete Entry')
+        return cy.get('button[type="button"]').contains('Delete Entry')
+       
     }
     getInvoiceCreation()
     {
@@ -114,7 +118,8 @@ class ClientProfile
     }
     getAddMedicationsButton()
     {
-        return cy.get('.ContactClinical__TabContentActions-sc-n5t4b1-2.dcWuki button').contains('Add')
+        return cy.get('button[aria-label="Add Medication Info"]')
+        
     }
     getMedicationNameField()
     {

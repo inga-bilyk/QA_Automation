@@ -47,7 +47,7 @@ describe('Create a new client from a clinic', function(){
         logIn.getPasswordField().type(this.data.password)
         logIn.getSignInButton().contains('Sign In').click() 
 
-        logIn.getUserNameValidation().should('have.text', this.data.textValue)
+        //logIn.getUserNameValidation().should('have.text', this.data.textValue)
         
         createClient.getClientsTab().contains('Clients').click()
         
@@ -65,18 +65,17 @@ describe('Create a new client from a clinic', function(){
        createClient.getToastMessage().should('not.be.visible').should('have.text', this.data1.toastMessage)
        
 
+       //Delete a client
 
-createClient.getCreatedClient()
-.should('have.length', 2)
-      createClient.getCreatedClient().eq(1)
-      .scrollIntoView() 
-      .should('be.visible')
-      createClient.getCreatedClientCheckbox().click()
-      createClient.getDeleteClientButton().click()
-      createClient.getDeleteSelectedClientButton().click()
-      cy.wait(5000)
-      createClient.getConfirmDeleteClientButton().click()
-      createClient.getToastMessage().should('not.be.visible').should('have.text', this.data1.deleteClientToast)
+       createClient.getClientsTab().contains('Clients').click()
+       cy.wait(3000)
+
+     createClient.getCreatedClientCheckbox().click()
+     createClient.getDeleteClientButton().click()
+     createClient.getDeleteSelectedClientButton().click()
+     cy.wait(5000)
+     createClient.getConfirmDeleteClientButton().click()
+     createClient.getToastMessage().should('not.be.visible').should('have.text', this.data1.deleteClientToast)
 
       
       

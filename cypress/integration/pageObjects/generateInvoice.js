@@ -71,7 +71,7 @@ class GenerateInvoice
     }
     getConfirmDeleteReceiptButton()
     {
-        return cy.get('.Modal__Actions-sc-m5rli6-2.kqmGrI button').contains('Delete Receipt')
+        return cy.get('button[type="button"]').contains('Delete Receipt')
     }
     getInvoicesTab()
     {

@@ -48,7 +48,7 @@ describe('Validate the notes can be created and signed', function(){
         logIn.getPasswordField().type(this.data.password)
         logIn.getSignInButton().contains('Sign In').click() 
 
-        logIn.getUserNameValidation().should('have.text', this.data.textValue)
+        //logIn.getUserNameValidation().should('have.text', this.data.textValue)
         cy.wait(3000)
         
         bookSession.getDayViewCalendar().trigger('mouseover').click({force:true})

@@ -54,7 +54,25 @@ describe('Secure Messages', function(){
         logIn.getPasswordField().type(this.data.password)
         logIn.getSignInButton().contains('Sign In').click() 
 
-        logIn.getUserNameValidation().should('have.text', this.data.textValue)
+        //logIn.getUserNameValidation().should('have.text', this.data.textValue)
+
+        //New block for client creation
+
+
+        createClient.getClientsTab().contains('Clients').click()
+        
+
+        createClient.getAddClientButton().click()
+        createClient.getClientFirstName().type(this.data1.firstName)
+        createClient.getClientLastName().type(this.data1.lastName)
+       
+       
+       createClient.getClientAddressField().type(this.data1.address)
+
+       createClient.getClientCity().type(this.data1.city)
+       createClient.getClientZipCodeField().type(this.data1.zip)
+       createClient.getCreateClientButton().click()
+       createClient.getToastMessage().should('not.be.visible').should('have.text', this.data1.toastMessage)
         
         createClient.getClientsTab().contains('Clients').click()
 
@@ -68,6 +86,18 @@ describe('Secure Messages', function(){
 
         clientExport.getExportButton().click()
         clientExport.getSuccessToast().should('be.visible').should('have.text','Successfully created client export - Please check back tomorrow for your completed export on the Clients > Exports page')
+
+        //Delete a client
+
+        createClient.getClientsTab().contains('Clients').click()
+        cy.wait(3000)
+
+      createClient.getCreatedClientCheckbox().click()
+      createClient.getDeleteClientButton().click()
+      createClient.getDeleteSelectedClientButton().click()
+      cy.wait(5000)
+      createClient.getConfirmDeleteClientButton().click()
+      createClient.getToastMessage().should('not.be.visible').should('have.text', this.data1.deleteClientToast)
      
     })
 

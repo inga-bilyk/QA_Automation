@@ -19,7 +19,8 @@ getUserNameValidation()
 
 getHamburgerDropdown()
 {
-    return cy.get('.Button__ButtonFlat-sc-17zmp21-1.jniHVF.Button__ButtonBase-sc-17zmp21-0.RthSp').eq(5)
+    //return cy.get('.Button__ButtonFlat-sc-17zmp21-1.jniHVF.Button__ButtonBase-sc-17zmp21-0.RthSp').eq(5)
+    return cy.get('button[aria-label="more options"]')
 }
 
 getLogOutButton()

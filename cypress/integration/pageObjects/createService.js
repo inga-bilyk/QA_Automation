@@ -10,7 +10,7 @@ getAddServiceButton()
 getServiceTypeDropdown()
 {
     return cy.get(':nth-child(3) > [data-testid="components_select_form-select"] > .css-10nd86i > .css-120k65n > .css-1c8pw3s')
-    //cy.get('.common__Grid-sc-1hb9rs-31.iAQwIx:nth-child(2)').find('.css-10nd86i')
+    
 }
 getServiceTypeSelection()
 {
@@ -19,7 +19,7 @@ getServiceTypeSelection()
 getTherapistGrade()
 {
     return cy.get(':nth-child(4) > .css-10nd86i > .css-120k65n > .css-1c8pw3s')
-    //cy.get(':nth-child(3) > .css-10nd86i > .css-120k65n > .css-1c8pw3s')
+    
 }
 getTherapistGradeSelection()
 {
@@ -28,17 +28,17 @@ getTherapistGradeSelection()
 getFeeField()
 {
     return cy.get('input[name="fee"]')
-    //cy.get(':nth-child(4) > .FormField__InputRow-sc-s9tc33-1 > .common__Input-sc-1hb9rs-23')
+    
 }
 getServiceNameField()
 {
     return cy.get('input[name="service_name"]')
-    //cy.get(':nth-child(2) > .FormField__InputRow-sc-s9tc33-1 > .common__Input-sc-1hb9rs-23')
+    
 }
 getAllowOnPortalDropdown()
 {
     return cy.get('.common__Grid-sc-1hb9rs-31 > :nth-child(1) > .css-10nd86i > .css-120k65n > .css-1c8pw3s')
-    cy.get(':nth-child(7) > :nth-child(1) > .css-10nd86i > .css-120k65n > .css-1c8pw3s')
+    
 }
 getAllowOnPortalOption()
 {
@@ -46,12 +46,13 @@ getAllowOnPortalOption()
 }
 getCreateServiceButton()
 {
-    return cy.get('[data-testid="containers+settings-services-and-fees_create-or-save-service"]')
+    //return cy.get('[data-testid="containers+settings-services-and-fees_create-or-save-service"]')
+    return cy.get('button[type="button"]').contains('Create Service')
 }
 getDuration()
 {
     return cy.get('input[name="duration"]')
-    //cy.get(':nth-child(2) > :nth-child(1) > .FormField__InputRow-sc-s9tc33-1 > .common__Input-sc-1hb9rs-23')
+    
 }
 getSelectAddedService()
 {
@@ -63,7 +64,7 @@ getDeleteServiceButton()
 }
 getDeleteFromModal()
 {
-    return cy.get('.Modal__Actions-sc-m5rli6-2').find('.fokMsb')
+    return cy.get('button[type="button"]').contains('Delete Service')
 }
 
 }

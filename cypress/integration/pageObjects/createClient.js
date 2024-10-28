@@ -3,6 +3,7 @@ class CreateClient{
     getClientsTab(){
 
         return cy.get(".styles__SideMenuWrapper-sc-xh2s93-4.dClqlN div")
+        
     }
 
     getAddClientButton()
@@ -60,7 +61,8 @@ class CreateClient{
     }
     getCreatedClientCheckbox()
     {
-        return cy.get('.Checkbox__Content-sc-t01l89-1.hlrWkY').eq(18)
+        return cy.get('div[role="checkbox"]').eq(1)
+        //return cy.get('div[class*="Checkbox__Wrapper"]').eq(0)
     }
     getDeleteClientButton()
     {

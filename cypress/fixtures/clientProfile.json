@@ -1,5 +1,5 @@
 {
-    "clientMenu":  "Sessions & NotesContact & ClinicalDocumentsFinancesInsuranceLogsMeasuresFormsSecure MessagingCreate InvoiceRecord PaymentClient SummaryClient ExportMessages ExportSend FormsSend MeasuresCreate SuperbillCreate Claim",
+    "clientMenu":  "Sessions & NotesContact & ClinicalDocumentsFinancesInsuranceLogsMeasuresFormsCreate InvoiceRecord PaymentClient SummaryClient ExportMessages ExportSend FormsSend MeasuresCreate SuperbillCreate Claim",
     "contactClinical" : "Contact & Clinical",
     "clinicalDetails" : "Clinical Details",
     "contactDetails": "Contact Details",
